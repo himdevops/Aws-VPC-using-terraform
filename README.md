@@ -123,7 +123,7 @@ rm -rf terraform.tfstate*
 
 ## Step-05: v2-vpc-module-standardized - Standardized and Generalized
 - In the next series of steps we are going to standardize the VPC configuration
-- c2-generic-variables.tf
+- generic-variables.tf
 ```t
 # Input Variables
 # AWS Region
