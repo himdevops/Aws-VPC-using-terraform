@@ -21,9 +21,9 @@
 6. Review our feature needs when using that module and ensure if our need is satisfied use the module else use the standard terraform resource definition appraoch. 
 7. Review module inputs, outputs and dependencies too. 
 ### Step-02-02: Create a VPC Module Terraform Configuration 
-- c1-versions.tf
-- c2-generic-variables.tf
-- c3-vpc.tf
+- provider.tf
+- generic-variables.tf
+- myvpc.tf
 - [Terraform AWS VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest)
 ```t
 # Create VPC Terraform Module
@@ -67,7 +67,7 @@ module "vpc" {
   }
 
   tags = {
-    Owner = "kalyan"
+    Owner = "Himanshu"
     Environment = "dev"
   }
 
