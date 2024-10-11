@@ -11,16 +11,16 @@ module "vpc" {              #here vpc is local name we can put anyother name to
   public_subnets      = ["10.0.101.0/24", "10.0.102.0/24"]
 
   # Database Subnets
-  create_database_subnet_group = true
-  create_database_subnet_route_table= true
+  create_database_subnet_group = true      
+  create_database_subnet_route_table= true    #need routetable for database sepratly
   database_subnets    = ["10.0.151.0/24", "10.0.152.0/24"]
-
-  #create_database_nat_gateway_route = true
-  #create_database_internet_gateway_route = true
+  #default is false. 
+  #create_database_nat_gateway_route = true    # public route via public nat gatway
+  #create_database_internet_gateway_route = true   # you need databse to be publicly accessable 
 
   # NAT Gateways - Outbound Communication
   enable_nat_gateway = true
-  single_nat_gateway = true
+  single_nat_gateway = true   # false for production grade env as we need nat gatway per az. 
 
   # VPC DNS Parameters
   enable_dns_hostnames = true
@@ -50,4 +50,5 @@ module "vpc" {              #here vpc is local name we can put anyother name to
   map_public_ip_on_launch = true
 }
 
+#block vs arguments . If anything{} its block but anything = {} equals is an argument. 
 
